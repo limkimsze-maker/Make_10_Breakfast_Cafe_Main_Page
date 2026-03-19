@@ -9,7 +9,7 @@
   <title>Breakfast Cafe:Make 10 all the Way!</title>
 
   <link rel="preload" as="image" href="breakfast_cafe_cover.png" fetchpriority="high" />
-  <link rel="preload" as="audio" href="breakfast-cafe.mp3" type="audio/mpeg" />
+  <link rel="preload" as="audio" href="breakfast_cafe.mp3" type="audio/mpeg" />
 
   <style>
     :root{
@@ -313,8 +313,8 @@
     <span class="spark"></span>
 
     <div class="card">
-      <img class="cover-back" src="pizza_cafe_cover.png" alt="" aria-hidden="true" />
-      <img class="cover" src="pizza_cafe_cover.png" alt="Breakfast Cafe:Make 10 all the Way! cover" />
+      <img class="cover-back" src="breakfast_cafe_cover.png" alt="" aria-hidden="true" />
+      <img class="cover" src="breakfast_cafe_cover.png" alt="Breakfast Cafe:Make 10 all the Way! cover" />
       <div class="overlay"></div>
 
       <div class="top-hint">Choose a mode to hear “Breakfast Cafe:Make 10 all the Way!” and begin</div>
@@ -337,8 +337,8 @@
     </div>
   </div>
 
-  <audio id="pizzaAudio" preload="auto" playsinline>
-    <source src="pizza-cafe.mp3" type="audio/mpeg" />
+  <audio id="breakfastAudio" preload="auto" playsinline>
+    <source src="breakfast_cafe.mp3" type="audio/mpeg" />
   </audio>
 
   <script>
@@ -347,13 +347,13 @@
 
     const desktopBtn = document.getElementById("desktopBtn");
     const mobileBtn = document.getElementById("mobileBtn");
-    const pizzaAudio = document.getElementById("pizzaAudio");
+    const breakfastAudio = document.getElementById("breakfastAudio");
     const statusText = document.getElementById("statusText");
 
     let modeChosen = false;
     let chosenLink = "";
 
-    pizzaAudio.load();
+    breakfastAudio.load();
 
     function disableButtons() {
       desktopBtn.disabled = true;
@@ -377,16 +377,16 @@
       disableButtons();
       showStatus(`Breakfast Cafe:Make 10 all the Way! Opening ${label}...`);
 
-      pizzaAudio.pause();
-      pizzaAudio.currentTime = 0;
+      breakfastAudio.pause();
+      breakfastAudio.currentTime = 0;
 
       const onEnded = () => {
         goTo(chosenLink);
       };
 
-      pizzaAudio.addEventListener("ended", onEnded, { once: true });
+      breakfastAudio.addEventListener("ended", onEnded, { once: true });
 
-      pizzaAudio.play().catch(() => {
+      breakfastAudio.play().catch(() => {
         goTo(chosenLink);
       });
     }
