@@ -113,7 +113,7 @@
       padding:
         max(56px, calc(env(safe-area-inset-top) + 16px))
         clamp(10px, 2vw, 22px)
-        max(170px, calc(env(safe-area-inset-bottom) + 130px));
+        max(40px, calc(env(safe-area-inset-bottom) + 20px));
     }
 
     .cover{
@@ -163,7 +163,8 @@
     .button-wrap{
       position:absolute;
       left:50%;
-      bottom:max(18px, calc(env(safe-area-inset-bottom) + 10px));
+      top:max(120px, calc(env(safe-area-inset-top) + 105px));
+      bottom:auto;
       transform:translateX(-50%);
       width:min(900px, calc(100% - 28px));
       display:grid;
@@ -276,6 +277,7 @@
       .button-wrap{
         width:calc(100% - 24px);
         gap:12px;
+        top:max(110px, calc(env(safe-area-inset-top) + 96px));
       }
 
       .mode-btn{
@@ -305,13 +307,14 @@
     @media (max-width: 560px){
       .button-wrap{
         grid-template-columns:1fr;
+        top:max(100px, calc(env(safe-area-inset-top) + 88px));
       }
 
       .cover-stage{
         padding:
           max(54px, calc(env(safe-area-inset-top) + 14px))
           10px
-          max(240px, calc(env(safe-area-inset-bottom) + 196px));
+          max(34px, calc(env(safe-area-inset-bottom) + 18px));
       }
 
       .status{
@@ -328,7 +331,7 @@
         padding:
           max(46px, calc(env(safe-area-inset-top) + 10px))
           10px
-          max(140px, calc(env(safe-area-inset-bottom) + 108px));
+          max(28px, calc(env(safe-area-inset-bottom) + 14px));
       }
 
       .mode-btn{
@@ -340,7 +343,8 @@
 
       .button-wrap{
         gap:10px;
-        bottom:max(10px, calc(env(safe-area-inset-bottom) + 6px));
+        top:max(92px, calc(env(safe-area-inset-top) + 78px));
+        bottom:auto;
       }
 
       .status{
