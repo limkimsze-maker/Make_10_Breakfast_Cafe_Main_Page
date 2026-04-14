@@ -111,7 +111,7 @@
       align-items:center;
       justify-content:center;
       padding:
-        max(56px, calc(env(safe-area-inset-top) + 16px))
+        max(220px, calc(env(safe-area-inset-top) + 190px))
         clamp(10px, 2vw, 22px)
         max(40px, calc(env(safe-area-inset-bottom) + 20px));
     }
@@ -145,7 +145,7 @@
       top:max(12px, calc(env(safe-area-inset-top) + 8px));
       left:50%;
       transform:translateX(-50%);
-      z-index:4;
+      z-index:5;
       padding:10px 16px;
       border-radius:999px;
       background:rgba(0,0,0,.38);
@@ -163,8 +163,7 @@
     .button-wrap{
       position:absolute;
       left:50%;
-      top:max(120px, calc(env(safe-area-inset-top) + 105px));
-      bottom:auto;
+      top:max(58px, calc(env(safe-area-inset-top) + 52px));
       transform:translateX(-50%);
       width:min(900px, calc(100% - 28px));
       display:grid;
@@ -237,7 +236,7 @@
     .status{
       position:absolute;
       left:50%;
-      bottom:max(118px, calc(env(safe-area-inset-bottom) + 102px));
+      top:max(156px, calc(env(safe-area-inset-top) + 148px));
       transform:translateX(-50%);
       z-index:5;
       width:min(560px, calc(100% - 28px));
@@ -263,7 +262,7 @@
     .credit{
       position:absolute;
       right:12px;
-      top:max(52px, calc(env(safe-area-inset-top) + 44px));
+      top:max(188px, calc(env(safe-area-inset-top) + 180px));
       z-index:5;
       font-size:12px;
       color:rgba(255,255,255,.92);
@@ -277,7 +276,7 @@
       .button-wrap{
         width:calc(100% - 24px);
         gap:12px;
-        top:max(110px, calc(env(safe-area-inset-top) + 96px));
+        top:max(54px, calc(env(safe-area-inset-top) + 48px));
       }
 
       .mode-btn{
@@ -289,6 +288,7 @@
 
       .status{
         width:calc(100% - 24px);
+        top:max(142px, calc(env(safe-area-inset-top) + 134px));
         font-size:clamp(14px, 4vw, 18px);
       }
 
@@ -297,41 +297,47 @@
         font-size:clamp(11px, 3.2vw, 14px);
       }
 
+      .cover-stage{
+        padding:
+          max(210px, calc(env(safe-area-inset-top) + 182px))
+          10px
+          max(34px, calc(env(safe-area-inset-bottom) + 18px));
+      }
+
       .credit{
-        top:auto;
+        top:max(176px, calc(env(safe-area-inset-top) + 168px));
         right:10px;
-        bottom:max(108px, calc(env(safe-area-inset-bottom) + 96px));
       }
     }
 
     @media (max-width: 560px){
       .button-wrap{
         grid-template-columns:1fr;
-        top:max(100px, calc(env(safe-area-inset-top) + 88px));
+        top:max(52px, calc(env(safe-area-inset-top) + 46px));
       }
 
       .cover-stage{
         padding:
-          max(54px, calc(env(safe-area-inset-top) + 14px))
+          max(300px, calc(env(safe-area-inset-top) + 272px))
           10px
-          max(34px, calc(env(safe-area-inset-bottom) + 18px));
+          max(30px, calc(env(safe-area-inset-bottom) + 16px));
       }
 
       .status{
-        bottom:max(188px, calc(env(safe-area-inset-bottom) + 176px));
+        top:max(222px, calc(env(safe-area-inset-top) + 212px));
       }
 
       .credit{
-        bottom:max(192px, calc(env(safe-area-inset-bottom) + 180px));
+        top:max(260px, calc(env(safe-area-inset-top) + 248px));
       }
     }
 
     @media (max-height: 620px){
       .cover-stage{
         padding:
-          max(46px, calc(env(safe-area-inset-top) + 10px))
+          max(180px, calc(env(safe-area-inset-top) + 154px))
           10px
-          max(28px, calc(env(safe-area-inset-bottom) + 14px));
+          max(24px, calc(env(safe-area-inset-bottom) + 12px));
       }
 
       .mode-btn{
@@ -343,12 +349,11 @@
 
       .button-wrap{
         gap:10px;
-        top:max(92px, calc(env(safe-area-inset-top) + 78px));
-        bottom:auto;
+        top:max(48px, calc(env(safe-area-inset-top) + 42px));
       }
 
       .status{
-        bottom:max(80px, calc(env(safe-area-inset-bottom) + 74px));
+        top:max(118px, calc(env(safe-area-inset-top) + 110px));
         padding:8px 14px;
         font-size:clamp(12px, 2.4vw, 16px);
       }
@@ -382,8 +387,6 @@
 
       <div class="top-hint">Choose a mode to hear “Breakfast Cafe:Make 10 all the Way!” and begin</div>
 
-      <div class="status" id="statusText">Loading...</div>
-
       <div class="button-wrap">
         <button class="mode-btn desktop" id="desktopBtn" type="button" aria-label="Open Desktop Mode">
           <span class="icon">🖥️</span>
@@ -395,6 +398,8 @@
           <span>Mobile Mode!</span>
         </button>
       </div>
+
+      <div class="status" id="statusText">Loading...</div>
 
       <div class="credit">Designed by Lim Kim Sze © 2026</div>
     </div>
